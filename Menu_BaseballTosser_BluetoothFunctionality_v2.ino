@@ -6,7 +6,7 @@
 
 // MODULE TX -> ARDUINO RX
 
-int Contrast = 75; // Contrast value for LCD screen
+int Contrast = 1; // Contrast value for LCD screen
 
 // Pins in parenthese used to communicate with the LCD screen
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
@@ -199,7 +199,7 @@ void pg_SET_PRESET()
       while(!ListComplete)
       {
 
-        if(Serial1.available()>0)
+        if(Serial1.available()==Num_of_Balls)
         {
           byte List[Num_of_Balls]; // Used to store the ball location serial values transmitted by the Bluetooth module
 
